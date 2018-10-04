@@ -20,7 +20,7 @@ app.use(bodyParser.urlencoded({ extended: true })); //
 var fs = require('fs');
 var obj = JSON.parse(fs.readFileSync('info.json', 'utf8'));
 
-console.log('Answer: ' + obj['밥']['강아지']['아침']); //// debugging
+console.log('Answer: ' + obj['Animals']['Eat']['Space']); //// debugging
 
 // app.post('/', function(req, res){
 //   var speech = 
@@ -52,7 +52,7 @@ app.post('/', function (request, response) {
     
     const actionHandlers = {
         'what.who.when': () => {
-            let responseToUser = { fulfillmentText: obj[what][who][when]};
+            let responseToUser = { fulfillmentText: obj[Animals][Eat][Space]};
             sendResponse(responseToUser);
         },
         
@@ -61,7 +61,7 @@ app.post('/', function (request, response) {
             sendResponse(responseToUser);
         }
     };
-
+Ea
     if (!actionHandlers[action]) {
          action = 'default';
     }
